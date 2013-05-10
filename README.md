@@ -1,25 +1,20 @@
 #Ruby Trip Budget - CLI
-<hr>
 
 ##Purpose
-<hr>
 This is my Ruby Capstone project for the Software Development Fundamentals portion of the Nashville Software School. I will be using the standard Ruby library.
 
 The goal of this project is to create a command line budget app for a vacation, using similar features found on Mint.com.
 
 
 ##Project Status/TODO
-<hr>
 This project is in the planning stages.
 
 
 ##Features
-<hr>
 Features for this app include being able to add expenses, track the budget's progress, and receive notifications via the terminal when they reaching their allotted budget.
 
 
 ##Usage Instructions
-<hr>
 Planned usage is as follows:
 
 To create a new trip:
@@ -56,15 +51,12 @@ To delete a trip
 
 
 ##Known bugs
-<hr>
 Yes.
 
 
 ##Author
-<hr>
 Cody Spriggs
 
 
 ##Changelog
-<hr>
 5/9/2013 - Created initial repository with README and user stories.
