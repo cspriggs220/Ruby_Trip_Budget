@@ -27,7 +27,7 @@ As a smart consumer<br />
 In order to stick to the budget<br />
 I want to be alerted when I reach a percentage of the total budget
 
-- When user is at a certain percentage of the total budget, a ding is sounded.
+- A ding is sounded and a warning message is displayed when the user reaches a specific percentage of their budget.
 <hr>
 
 As a smart consumer<br />
