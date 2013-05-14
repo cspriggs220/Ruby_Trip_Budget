@@ -1,4 +1,4 @@
-#User Stories for Trip Budget
+# User Stories for Trip Budget
 <hr>
 
 As a travel enthusiast<br />
