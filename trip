@@ -13,4 +13,9 @@ if command == "add"
   else
     puts "Failed: #{trip.errors.full_messages.join(", ")}."
   end
+elsif command == "list"
+  trips = Trip.all
+  trips.each_with_index do |trip, i|
+   puts "#{i+1}. #{trip.name}"
+  end
 end

@@ -49,6 +49,10 @@ To list available commands:
 
     > trip man
 
+To list available trips:
+
+    > trip list
+
 To delete a trip
 
     > trip delete Honolulu
