@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+
+require_relative 'bootstrap_ar'
+
+# ARGV = add foo
+command = ARGV[0]
+
+if command == "add"
+  trip_name = ARGV[1]
+  Trip.create( name: trip_name )
+
+end

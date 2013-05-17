@@ -16,10 +16,16 @@ I want to create a budget for this trip
 <hr>
 
 As a smart consumer<br />
+In order to not over spend in certain categories<br />
+I want to be able to set a budget for each seperate category<br />
+
+- User runs `> trip set <category_name> <amount>`
+
+As a smart consumer<br />
 In order to stick to the budget<br />
 I want to keep track of my expenses
 
-- User runs `> trip list cat` to view expense categories
+- User runs `> trip list cat` to view default expense categories
 - User runs `> trip <category_name> <amount>`
 <hr>
 
@@ -34,7 +40,8 @@ As a smart consumer<br />
 In order to stick to the budget<br />
 I want to be able to see the balance of my budget
 
-- User runs `> trip balance` to see remaining budget amount
+- User runs `> trip balance` to view remaining budget amount
+- User runs `> trip cat balance` to view a more detailed report by category
 <hr>
 
 As a smart consumer<br />
