@@ -6,8 +6,12 @@ This is my Ruby Capstone project for the Software Development Fundamentals porti
 The goal of this project is to create a command line budget app for a vacation, using similar features found on Mint.com.
 
 
-##Project Status/TODO
-This project is in the planning stages.
+##Project Status
+This project is in the early structuring stages.
+
+##TODO
+1. The tests should use a test database.
+2. `Trip.destroy_all` is not the ideal solution for testing.
 
 
 ##Features
@@ -35,7 +39,7 @@ To add expense:
 
 To list total expenses:
 
-    > trip list
+    > trip expense list
 
 To show budget balance:
 
@@ -51,7 +55,7 @@ To delete a trip
 
 
 ##Known bugs
-Yes.
+<em>Project in beginning stage.</em>
 
 
 ##Author
@@ -60,3 +64,4 @@ Cody Spriggs
 
 ##Changelog
 5/9/2013 - Created initial repository with README and user stories.
+5/15/2013 - Setup file structure and ActiveRecord

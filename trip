@@ -7,6 +7,10 @@ command = ARGV[0]
 
 if command == "add"
   trip_name = ARGV[1]
-  Trip.create( name: trip_name )
-
+  trip = Trip.create( name: trip_name )
+  if trip.save
+    puts "Successfully added new trip #{trip_name}."
+  else
+    puts "Failed: #{trip.errors.full_messages.join(", ")}."
+  end
 end
