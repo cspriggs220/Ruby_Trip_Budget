@@ -1,6 +1,8 @@
 #!/usr/bin/env ruby
 
 require_relative 'bootstrap_ar'
+database = ENV['FP_ENV'] || 'development'
+connect_to database
 
 # ARGV = add foo
 command = ARGV[0]
@@ -15,7 +17,13 @@ if command == "add"
   end
 elsif command == "list"
   trips = Trip.all
-  trips.each_with_index do |trip, i|
+  trips.each_with_index { |trip, i|
    puts "#{i+1}. #{trip.name}"
+  }
+elsif command == "delete"
+  trip_name = ARGV[1]
+  matching_trips = Trip.where(name: trip_name).all
+  matching_trips.each do |trip|
+    trip.destroy
   end
 end

@@ -12,7 +12,7 @@ This project is in the early structuring stages.
 ##TODO
 1. The tests should use a test database.
 2. `Trip.destroy_all` is not the ideal solution for testing.
-
+3. Implement data validations.
 
 ##Features
 Features for this app include being able to add expenses, track the budget's progress, and receive notifications via the terminal when they reaching their allotted budget.
