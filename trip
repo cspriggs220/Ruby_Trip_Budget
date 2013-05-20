@@ -6,24 +6,22 @@ connect_to database
 
 # ARGV = add foo
 command = ARGV[0]
+trip_name = ARGV[1]
+
+params = { command: command, trip: { name: trip_name } }
+controller = TripController.new(params)
+# routes = { "add" => :create, "list" => :index, "delete" => :destroy }
+
+# Look into finishing
+# if route = routes[command]
+#   controller.send route
+# else
+#   unless command == "help"
 
 if command == "add"
-  trip_name = ARGV[1]
-  trip = Trip.create( name: trip_name )
-  if trip.save
-    puts "Successfully added new trip #{trip_name}."
-  else
-    puts "Failed: #{trip.errors.full_messages.join(", ")}."
-  end
+  controller.create
 elsif command == "list"
-  trips = Trip.all
-  trips.each_with_index { |trip, i|
-   puts "#{i+1}. #{trip.name}"
-  }
+  controller.index
 elsif command == "delete"
-  trip_name = ARGV[1]
-  matching_trips = Trip.where(name: trip_name).all
-  matching_trips.each do |trip|
-    trip.destroy
-  end
+  controller.destroy
 end

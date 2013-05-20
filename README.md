@@ -65,7 +65,11 @@ To delete a trip
 ##Author
 Cody Spriggs
 
+##License
+None
+
 
 ##Changelog
 5/9/2013 - Created initial repository with README and user stories.
 5/15/2013 - Setup file structure and ActiveRecord
+5/19/2013 - Begin setting up separate tables for project.

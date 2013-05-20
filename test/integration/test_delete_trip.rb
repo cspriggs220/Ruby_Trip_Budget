@@ -1,4 +1,4 @@
-require 'test_helper'
+require_relative '../test_helper'
 
 class TestDeletingTrip < MiniTest::Unit::TestCase
   include DatabaseCleaner
@@ -15,6 +15,5 @@ class TestDeletingTrip < MiniTest::Unit::TestCase
     Trip.create( name: 'c' )
     assert !Trip.where( name: 'b').all.empty?
     `ruby trip delete b`
-
   end
 end
