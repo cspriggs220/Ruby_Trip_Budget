@@ -10,7 +10,9 @@ trip_name = ARGV[1]
 
 params = { command: command, trip: { name: trip_name } }
 controller = TripController.new(params)
-cat_controller = CategoryController.new(params)
+
+cat_params = { name: trip_name }
+cat_controller = CategoryController.new(cat_params)
 # routes = { "add" => :create, "list" => :index, "remove" => :destroy }
 
 # Look into finishing
