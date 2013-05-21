@@ -5,9 +5,6 @@ class TripController
     @params = params
   end
 
-  # def activate_trip
-  # end
-
   def create
     trip = Trip.create( params[:trip] )
     if trip.save
@@ -18,10 +15,12 @@ class TripController
   end
 
   def index
+    string = "Trip List\n"
     trips = Trip.all
     trips.each_with_index { |trip, i|
-     puts "#{i+1}. #{trip.name}"
+     string += "#{i+1}. #{trip.name}\n"
     }
+    puts string
   end
 
   def destroy

@@ -25,13 +25,21 @@ To create a new trip:
 
     > trip add Honolulu
 
+To list available trips:
+
+    > trip list
+
+To remove a trip
+
+    > trip remove Honolulu
+
 To set a new budget:
 
     > trip set Honolulu 3000
 
 To list available expense categories:
 
-    > trip list cat
+    > trip cat
 
 To add expense:
 
@@ -49,13 +57,7 @@ To list available commands:
 
     > trip man
 
-To list available trips:
 
-    > trip list
-
-To delete a trip
-
-    > trip delete Honolulu
 
 
 ##Known bugs

@@ -10,7 +10,8 @@ trip_name = ARGV[1]
 
 params = { command: command, trip: { name: trip_name } }
 controller = TripController.new(params)
-# routes = { "add" => :create, "list" => :index, "delete" => :destroy }
+cat_controller = CategoryController.new(params)
+# routes = { "add" => :create, "list" => :index, "remove" => :destroy }
 
 # Look into finishing
 # if route = routes[command]
@@ -22,6 +23,10 @@ if command == "add"
   controller.create
 elsif command == "list"
   controller.index
-elsif command == "delete"
+elsif command == "remove"
   controller.destroy
+elsif command == "cat"
+  cat_controller.index
+  # elsif command == set && trip_name?
+    # BudgetController.new(params)
 end
