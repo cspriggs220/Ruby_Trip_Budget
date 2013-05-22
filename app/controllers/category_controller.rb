@@ -3,9 +3,9 @@ class CategoryController
 
   CATEGORIES = %w{ Food Entertainment Lodging Airfare Fuel Shopping Other}
 
-  def initialize params
-    @params = params
-  end
+  # def initialize
+  #   @params = params
+  # end
 
   def index
     string = "Available Expense Categories\n"

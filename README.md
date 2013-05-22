@@ -35,7 +35,7 @@ To remove a trip
 
 To set a new budget:
 
-    > trip set Honolulu 3000
+    > trip set Honolulu Food 300
 
 To list available expense categories:
 
@@ -43,19 +43,19 @@ To list available expense categories:
 
 To add expense:
 
-    > trip Lodging 485
+    > trip Honolulu Lodging 485
 
 To list total expenses:
 
-    > trip expense list
+    > trip Honolulu expense list
 
 To show budget balance:
 
-    > trip balance
+    > trip Honolulu balance
 
 To list available commands:
 
-    > trip man
+    > trip help
 
 
 

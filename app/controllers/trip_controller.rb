@@ -23,11 +23,23 @@ class TripController
     puts string
   end
 
+  def set_category_budget
+    matching_trip = Trip.where( name: params[:trip][:name] ).first
+    matching_cat  = Category.where( name: params[:category][:name] ).first
+    new_budget    = Budget.create( trip_id: matching_trip.id, category_id: matching_cat.id, total: params[:amount][:integer] )
+    if new_budget.save
+      puts "Budget successfully created for your #{matching_trip.name} trip!\nCategory: #{matching_cat.name}\nBudget: #{new_budget.total}"
+    else
+      puts "Failed to set budget. Please run `./trip cat` for a list of available categories."
+    end
+  end
+
   def destroy
     matching_trips = Trip.where(name: params[:trip][:name]).all
     matching_trips.each do |trip|
       trip.destroy
     end
   end
+
 
 end
