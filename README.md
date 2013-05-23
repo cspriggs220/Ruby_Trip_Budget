@@ -7,12 +7,12 @@ The goal of this project is to create a command line budget app for a vacation, 
 
 
 ##Project Status
-This project is in the early structuring stages.
+Closing in on halfway.
+User can create trips, view the available expense categories, and even set budgets for those categories. Also complete is the ability to print out the balance of the trip, which shows each category's total budget, in addition to the trip's total overall budget.
 
 ##TODO
-1. The tests should use a test database.
-2. `Trip.destroy_all` is not the ideal solution for testing.
-3. Implement data validations.
+1. Create Expense functionality
+2. Update each category and subsequent budget after each expense added
 
 ##Features
 Features for this app include being able to add expenses, track the budget's progress, and receive notifications via the terminal when they reaching their allotted budget.
@@ -33,25 +33,25 @@ To remove a trip
 
     > trip remove Honolulu
 
-To set a new budget:
-
-    > trip set Honolulu Food 300
-
 To list available expense categories:
 
     > trip cat
 
+To set a new budget to an expense category:
+
+    > trip set Honolulu Food 300
+
 To add expense:
 
-    > trip Honolulu Lodging 485
+    > trip expense add Honolulu Lodging 485
 
 To list total expenses:
 
-    > trip Honolulu expense list
+    > trip expense Honolulu list
 
 To show budget balance:
 
-    > trip Honolulu balance
+    > trip balance Honolulu
 
 To list available commands:
 
@@ -75,3 +75,5 @@ None
 5/9/2013 - Created initial repository with README and user stories.
 5/15/2013 - Setup file structure and ActiveRecord
 5/19/2013 - Begin setting up separate tables for project.
+5/20/2013 - Add create/remove/list functionality for trips.
+5/21/2013 - Add setting a trip's expense category budget, as well as printing the balance of the budget for trip.

@@ -28,11 +28,24 @@ class TripController
     matching_cat  = Category.where( name: params[:category][:name] ).first
     new_budget    = Budget.create( trip_id: matching_trip.id, category_id: matching_cat.id, total: params[:amount][:integer] )
     if new_budget.save
+      # case statement using an array of Categories(module?) to filter out bad categories?
       puts "Budget successfully created for your #{matching_trip.name} trip!\nCategory: #{matching_cat.name}\nBudget: #{new_budget.total}"
     else
       puts "Failed to set budget. Please run `./trip cat` for a list of available categories."
     end
   end
+
+  def get_balance
+    matching_trip = Trip.where( name: params[:trip][:name] ).first
+    budget = Budget.where( trip_id: matching_trip.id )
+    totals = 0
+    budget.each do |b|
+      totals += b.total
+      puts b.category.name.ljust(15) + " - " + b.total.to_s
+    end
+    puts "Total #{matching_trip.name} Budget: $#{totals}"
+  end
+
 
   def destroy
     matching_trips = Trip.where(name: params[:trip][:name]).all

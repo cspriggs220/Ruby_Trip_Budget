@@ -34,4 +34,6 @@ elsif command == "cat"
   cat_controller.index
 elsif command == "set"
   controller.set_category_budget
+elsif command == "balance"
+  controller.get_balance
 end
