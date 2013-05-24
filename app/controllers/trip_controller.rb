@@ -26,7 +26,6 @@ class TripController
   end
 
   def set_category_budget
-    # case statement instead?
     if CATEGORIES.include?( params[:category][:name] )
       matching_trip = Trip.where( name: params[:trip][:name] ).first
       matching_cat  = Category.where( name: params[:category][:name] ).first
@@ -36,6 +35,10 @@ class TripController
     else
       puts "Failed to set budget. Please run `./trip cat` for a list of available categories."
     end
+  end
+
+  def create_expense
+    Expense.create( amount: params[:amount][:integer] )
   end
 
   def get_balance
@@ -51,6 +54,8 @@ class TripController
 
 
   def destroy
+    # add warning about removing a trip, prompt the user to type y or n
+    # add message stating #{trip} has been removed
     matching_trips = Trip.where(name: params[:trip][:name]).all
     matching_trips.each do |trip|
       trip.destroy

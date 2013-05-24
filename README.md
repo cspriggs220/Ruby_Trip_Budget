@@ -13,6 +13,10 @@ User can create trips, view the available expense categories, and even set budge
 ##TODO
 1. Create Expense functionality
 2. Update each category and subsequent budget after each expense added
+3. Implement routes instead of if command == in exe file.
+4. Add warning message when removing a trip, along with message that the trip was removed.
+5. Add instructions on how to use the ./trip command to README.
+6. Add help functionality
 
 ##Features
 Features for this app include being able to add expenses, track the budget's progress, and receive notifications via the terminal when they reaching their allotted budget.
@@ -43,11 +47,11 @@ To set a new budget to an expense category:
 
 To add expense:
 
-    > trip expense add Honolulu Lodging 485
+    > trip expense Honolulu Lodging 485
 
 To list total expenses:
 
-    > trip expense Honolulu list
+    > trip expense list Honolulu
 
 To show budget balance:
 
@@ -72,8 +76,9 @@ None
 
 
 ##Changelog
-5/9/2013 - Created initial repository with README and user stories.
+5/9/2013 - Create initial repository with README and user stories.
 5/15/2013 - Setup file structure and ActiveRecord
 5/19/2013 - Begin setting up separate tables for project.
 5/20/2013 - Add create/remove/list functionality for trips.
 5/21/2013 - Add setting a trip's expense category budget, as well as printing the balance of the budget for trip.
+5/24/2013 - Add expenses table on database, and begin adding expense functionality.

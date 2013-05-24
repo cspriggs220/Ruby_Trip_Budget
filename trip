@@ -8,9 +8,9 @@ connect_to database
 command = ARGV[0]
 trip_name = ARGV[1]
 category_name = ARGV[2]
-budget_amount = ARGV[3]
+amount = ARGV[3]
 
-params = { command: command, trip: { name: trip_name }, category: { name: category_name }, amount: { integer: budget_amount } }
+params = { command: command, trip: { name: trip_name }, category: { name: category_name }, amount: { integer: amount } }
 
 controller = TripController.new(params)
 
@@ -29,11 +29,12 @@ elsif command == "list"
 elsif command == "remove"
   controller.destroy
 elsif command == "cat"
-  # cat_params = { name: ARGV[1] }
   cat_controller = CategoryController.new
   cat_controller.index
 elsif command == "set"
   controller.set_category_budget
 elsif command == "balance"
   controller.get_balance
+elsif command == "expense"
+  controller.create_expense
 end

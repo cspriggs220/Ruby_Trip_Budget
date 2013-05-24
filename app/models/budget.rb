@@ -1,6 +1,7 @@
 class Budget < ActiveRecord::Base
   belongs_to :trip
   belongs_to :category
+  has_many :expenses
 end
 
 # scope :with_expense_totals, ->(){
