@@ -29,12 +29,13 @@ elsif command == "list"
 elsif command == "remove"
   controller.destroy
 elsif command == "cat"
-  cat_controller = CategoryController.new
-  cat_controller.index
+  controller = CategoryController.new
+  controller.index
 elsif command == "set"
   controller.set_category_budget
 elsif command == "balance"
   controller.get_balance
 elsif command == "expense"
-  controller.create_expense
+  controller = ExpenseController.new(params)
+  controller.create
 end

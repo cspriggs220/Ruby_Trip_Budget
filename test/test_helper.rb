@@ -9,5 +9,8 @@ module DatabaseCleaner
   def before_setup
     super
     Trip.destroy_all
+    Category.destroy_all
+    Budget.destroy_all
+    Expense.destroy_all
   end
 end

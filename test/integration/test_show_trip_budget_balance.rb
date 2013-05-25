@@ -6,7 +6,6 @@ class TestShowTripBudgetBalance < MiniTest::Unit::TestCase
   def test_listing_single_category_budgets
     Trip.create( name: 'Austin' )
     Category.create( name: 'Food' )
-    Budget.create()
     `ruby trip set Austin Food 100`
     expected = <<EOS
 Food            - 100
@@ -25,7 +24,6 @@ EOS
     Category.create( name: 'Fuel' )
     Category.create( name: 'Shopping' )
     Category.create( name: 'Other' )
-    Budget.create()
     `ruby trip set Austin Food 100`
     `ruby trip set Austin Entertainment 300`
     `ruby trip set Austin Lodging 500`

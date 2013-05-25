@@ -37,10 +37,6 @@ class TripController
     end
   end
 
-  def create_expense
-    Expense.create( amount: params[:amount][:integer] )
-  end
-
   def get_balance
     matching_trip = Trip.where( name: params[:trip][:name] ).first
     budget = Budget.where( trip_id: matching_trip.id )
