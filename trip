@@ -37,5 +37,9 @@ elsif command == "balance"
   controller.get_balance
 elsif command == "expense"
   controller = ExpenseController.new(params)
-  controller.create
+  if trip_name == 'list'
+    controller.index
+  else
+    controller.create
+  end
 end
