@@ -12,12 +12,11 @@ User can create trips, view the available expense categories, and even set budge
 
 ##TODO
 1. Update each category and subsequent budget after each expense added.
-2. Calculate total expenses.
-4. Add warning message when removing a trip, along with message that the trip was removed.
-7. Add ding for reaching n percentage of allotted budget.
-6. Add help functionality
+2. Add warning message when removing a trip, along with message that the trip was removed.
+3. Add ding for reaching n percentage of allotted budget.
+4. Add help functionality
 5. Add instructions on how to use the ./trip command to README.
-2. Implement routes instead of if command == in exe file.
+6. Implement routes instead of if command == in exe file.
 
 ##Features
 Features for this app include being able to add expenses, track the budget's progress, and receive notifications via the terminal when they reaching their allotted budget.
@@ -54,7 +53,7 @@ To list total expenses:
 
     > trip expense list Honolulu
 
-To show budget balance:
+To show the trip's budget:
 
     > trip balance Honolulu
 
@@ -66,7 +65,8 @@ To list available commands:
 
 
 ##Known bugs
-<em>Project in beginning stage.</em>
+Not updating db for each expense.
+Doesn't account for multiple expenses per category.
 
 
 ##Author
