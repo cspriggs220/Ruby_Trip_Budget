@@ -1,5 +1,7 @@
 class Expense < ActiveRecord::Base
   belongs_to :budget
+  belongs_to :trip
+  has_one :category, through: :budgets
 end
 
 # scope :by_category, ->(category){

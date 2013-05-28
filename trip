@@ -34,6 +34,7 @@ elsif command == "cat"
 elsif command == "set"
   controller.set_category_budget
 elsif command == "balance"
+  controller = ExpenseController.new(params)
   controller.get_balance
 elsif command == "expense"
   controller = ExpenseController.new(params)

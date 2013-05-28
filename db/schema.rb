@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(:version => 20130523220200) do
   create_table "expenses", :force => true do |t|
     t.integer "amount"
     t.integer "budget_id"
+    t.integer "trip_id"
   end
 
   create_table "trips", :force => true do |t|

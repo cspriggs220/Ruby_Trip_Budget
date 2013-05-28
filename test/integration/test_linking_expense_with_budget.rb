@@ -31,4 +31,15 @@ class TestLinkingExpenseWithBudget < MiniTest::Unit::TestCase
     assert_equal b_shop.id, expense_shop.budget_id
   end
 
+  # def test_expenses_update_budget
+  #   Trip.create( name: 'Chicago' )
+  #   Category.create( name: 'Food' )
+  #   `ruby trip set Chicago Food 380`
+  #   trip         = Trip.where( name: 'Chicago' ).first
+  #   cat_food     = Category.where( name: 'Food' ).first
+  #   b_food       = Budget.where( trip_id: trip.id, category_id: cat_food.id ).first
+  #   trip.expenses.create( amount: 53, budget_id: b_food.id )
+  #   assert_equal b_shop.id, expense_shop.budget_id
+  # end
+
 end
