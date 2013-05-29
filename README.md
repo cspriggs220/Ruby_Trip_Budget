@@ -12,6 +12,7 @@ User can create trips, view the available expense categories, and even set budge
 
 ##TODO
 1. Update each category and subsequent budget after each expense added.
+2. Transform into a terminal "app" instead of needing to run the file path to perform an action.
 2. Add warning message when removing a trip, along with message that the trip was removed.
 3. Add ding for reaching n percentage of allotted budget.
 4. Add help functionality

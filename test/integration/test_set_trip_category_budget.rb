@@ -20,9 +20,9 @@ class TestSetTripCategoryBudget < MiniTest::Unit::TestCase
 
   def test_set_bad_category_name
     Trip.create( name: 'Memphis' )
-    expected = <<EOS
+    expected = """
 Failed to set budget. Please run `./trip cat` for a list of available categories.
-EOS
+"""
     actual = `ruby trip set Memphis Candy 25`
     assert_equal expected, actual
   end
@@ -32,6 +32,7 @@ EOS
     Trip.create( name: 'Memphis' )
     actual   = `ruby trip set Memphis Food 100`
     expected = <<EOS
+
 Budget successfully created for your Memphis trip!
 Category: Food
 Budget: 100

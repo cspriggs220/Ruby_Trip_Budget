@@ -19,11 +19,14 @@ class TestLinkingExpenseWithBudget < MiniTest::Unit::TestCase
     b_other = Budget.create( trip_id: trip.id, category_id: other.id, total: 75)
     trip.expenses.create( amount: 25, budget_id: b_food.id )
     trip.expenses.create( amount: 33, budget_id: b_other.id )
-    expected = <<EOS
+    expected = """
 Boston Expense List
+-------------------------------------------
 1. Food 25 || Food Balance - $225
+-------------------------------------------
 2. Other 33 || Other Balance - $42
-EOS
+-------------------------------------------
+"""
     actual = `ruby trip expense list Boston`
     assert_equal expected, actual
   end

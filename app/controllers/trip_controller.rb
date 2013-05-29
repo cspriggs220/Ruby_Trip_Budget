@@ -17,14 +17,18 @@ class TripController
   end
 
   def index
-    string = "\n" "Trip List\n"
-    string += "-------------------------------------------"
-    trips = Trip.all
-    trips.each_with_index { |trip, i|
-     string += "\n" + "#{i+1}. #{trip.name}\n"
-    }
-    string += "-------------------------------------------"
-    puts string
+    if Trip.count == 0
+      puts "There are no trips to list. Please run `./trip add <trip-name>` to add a trip."
+    else
+      string = "\n" "Trip List\n"
+      string += "-------------------------------------------"
+      trips = Trip.all
+      trips.each_with_index { |trip, i|
+       string += "\n" + "#{i+1}. #{trip.name}\n"
+      }
+      string += "-------------------------------------------"
+      puts string
+    end
   end
 
   def set_category_budget
