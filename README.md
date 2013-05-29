@@ -7,8 +7,9 @@ The goal of this project is to create a command line budget app for a vacation, 
 
 
 ##Project Status
-Closing in on halfway.
-User can create trips, view the available expense categories, and even set budgets for those categories. Also complete is the ability to print out the balance of the trip, which shows each category's total budget, in addition to the trip's total overall budget.
+[![Build Status](https://travis-ci.org/cspriggs220/Ruby_Trip_Budget.png)](https://travis-ci.org/cspriggs220/Ruby_Trip_Budget)
+
+Completed basic implementation, including trip add/remove/list, budet setting, and expense add/list with remaining balance for said category. Project not complete.
 
 ##TODO
 1. Update each category and subsequent budget after each expense added.
