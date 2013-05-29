@@ -17,6 +17,7 @@ User can create trips, view the available expense categories, and even set budge
 4. Add help functionality
 5. Add instructions on how to use the ./trip command to README.
 6. Implement routes instead of if command == in exe file.
+7. Add other errors for wrong/invalid arguments passed.
 
 ##Features
 Features for this app include being able to add expenses, track the budget's progress, and receive notifications via the terminal when they reaching their allotted budget.
@@ -67,6 +68,7 @@ To list available commands:
 ##Known bugs
 Not updating db for each expense.
 Doesn't account for multiple expenses per category.
+Removing a trip doesn't wipe out all trip associations in the db.
 
 
 ##Author

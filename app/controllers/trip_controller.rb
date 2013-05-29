@@ -10,18 +10,20 @@ class TripController
   def create
     trip = Trip.create( params[:trip] )
     if trip.save
-      puts "Successfully added new trip #{trip.name}"
+      puts "\n" + "Successfully added new trip #{trip.name}"
     else
-      puts "Failed: #{trip.errors.full_messages.join(", ")}."
+      puts "\n" + "Failed: #{trip.errors.full_messages.join(", ")}."
     end
   end
 
   def index
-    string = "Trip List\n"
+    string = "\n" "Trip List\n"
+    string += "-------------------------------------------"
     trips = Trip.all
     trips.each_with_index { |trip, i|
-     string += "#{i+1}. #{trip.name}\n"
+     string += "\n" + "#{i+1}. #{trip.name}\n"
     }
+    string += "-------------------------------------------"
     puts string
   end
 
@@ -31,9 +33,9 @@ class TripController
       matching_cat  = Category.where( name: params[:category][:name] ).first
       new_budget    = Budget.create( trip_id: matching_trip.id, category_id: matching_cat.id, total: params[:amount][:integer] )
 
-      puts "Budget successfully created for your #{matching_trip.name} trip!\nCategory: #{matching_cat.name}\nBudget: #{new_budget.total}"
+      puts "\n" + "Budget successfully created for your #{matching_trip.name} trip!\nCategory: #{matching_cat.name}\nBudget: #{new_budget.total}"
     else
-      puts "Failed to set budget. Please run `./trip cat` for a list of available categories."
+      puts "\n" + "Failed to set budget. Please run `./trip cat` for a list of available categories."
     end
   end
 
@@ -41,11 +43,16 @@ class TripController
     matching_trip = Trip.where( name: params[:trip][:name] ).first
     budget = Budget.where( trip_id: matching_trip.id )
     totals = 0
+    string = "\n"
+    string += "-------------------------------------------"
     budget.each do |b|
       totals += b.total
-      puts b.category.name.ljust(15) + " - " + b.total.to_s
+      string += "\n" + b.category.name.ljust(15) + " - " + b.total.to_s
     end
-    puts "Total #{matching_trip.name} Budget: $#{totals}"
+    string += "\n"
+    string += "-------------------------------------------"
+    string += "\n"
+    puts string + "Total #{matching_trip.name} Budget: $#{totals}"
   end
 
 
