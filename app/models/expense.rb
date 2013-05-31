@@ -2,6 +2,8 @@ class Expense < ActiveRecord::Base
   belongs_to :budget
   belongs_to :trip
   has_one :category, through: :budgets
+
+  scope :greater_than_zero, where("amount > 0")
 end
 
 # scope :by_category, ->(category){

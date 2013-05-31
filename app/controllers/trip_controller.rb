@@ -63,6 +63,7 @@ class TripController
   def destroy
     # add warning about removing a trip, prompt the user to type y or n
     # add message stating #{trip} has been removed
+    # gets
     matching_trips = Trip.where(name: params[:trip][:name]).all
     matching_trips.each do |trip|
       trip.destroy

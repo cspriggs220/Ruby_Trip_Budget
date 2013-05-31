@@ -81,9 +81,10 @@ None
 
 
 ##Changelog
-5/9/2013 - Create initial repository with README and user stories.
-5/15/2013 - Setup file structure and ActiveRecord
-5/19/2013 - Begin setting up separate tables for project.
-5/20/2013 - Add create/remove/list functionality for trips.
-5/21/2013 - Add setting a trip's expense category budget, as well as printing the balance of the budget for trip.
-5/24/2013 - Add expenses table on database, and begin adding expense functionality.
+1. 2013/5/9 - Create initial repository with README and user stories.
+2. 2013/5/15 - Setup file structure and ActiveRecord
+3. 2013/5/19 - Begin setting up separate tables for project.
+4. 2013/5/20 - Add create/remove/list functionality for trips.
+5. 2013/5/21 - Add setting a trip's expense category budget, as well as printing the balance of the budget for trip.
+5. 2013/5/24 - Add expenses table on database, and begin adding expense functionality.
+5. 2013/5/31 - Refactor expense controller.
