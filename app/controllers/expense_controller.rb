@@ -21,11 +21,11 @@ class ExpenseController
   def index
     trip_name = params[:category][:name]
     trip = Trip.where( name: trip_name ).first
-    string = ""
+    string = "\n#{trip.name} Expense List\n"
     if trip.expenses.exists?
-      trip.budgets.joins(:category).where("category_id is not null").each {|budget|
+      trip.budgets.joins(:category).where("category_id is not null").each_with_index {|budget, i|
         total = budget.expenses.sum(:amount) #expenses.greater_than_zero.sum
-      string += "\n" "#{budget.category.name} $#{total} || #{budget.category.name} Balance: $#{budget.total-total}\n"
+        string += "\n" "#{i+1}. #{budget.category.name} $#{total} || #{budget.category.name} Balance: $#{budget.total-total}\n"
       }
       puts string
     else
