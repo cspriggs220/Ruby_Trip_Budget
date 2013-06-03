@@ -1,7 +1,7 @@
 class CategoryController
-  include ExpenseCategories
-
   attr_accessor :params
+
+  CATEGORIES = %w{ Food Entertainment Lodging Airfare Fuel Shopping Other}
 
   def index
     string = "Available Expense Categories\n"

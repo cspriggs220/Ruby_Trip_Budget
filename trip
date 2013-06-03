@@ -34,11 +34,11 @@ elsif command == "cat"
 elsif command == "set"
   controller.set_category_budget
 elsif command == "balance"
-  controller.get_balance
+  controller.print_budget_balance
 elsif command == "expense"
   controller = ExpenseController.new(params)
   if trip_name == 'list'
-    controller.index
+    controller.print_expense_balance
   else
     controller.create
   end
