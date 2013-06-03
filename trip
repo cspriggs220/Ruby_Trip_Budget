@@ -40,6 +40,6 @@ elsif command == "expense"
   if trip_name == 'list'
     controller.print_expense_balance
   else
-    controller.create
+    controller.print_create_message
   end
 end
