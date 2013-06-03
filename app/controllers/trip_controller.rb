@@ -32,14 +32,16 @@ class TripController
   end
 
   def set_category_budget
-    if CATEGORIES.include?( params[:category][:name] )
-      matching_trip = Trip.where( name: params[:trip][:name] ).first
-      matching_cat  = Category.where( name: params[:category][:name] ).first
-      new_budget    = Budget.create( trip_id: matching_trip.id, category_id: matching_cat.id, total: params[:amount][:integer] )
-
-      puts "\n" + "Budget successfully created for your #{matching_trip.name} trip!\nCategory: #{matching_cat.name}\nBudget: #{new_budget.total}"
+    category  = Category.where( name: params[:category][:name] ).first
+    total = params[:amount][:integer]
+    if category
+      trip   = Trip.where( name: params[:trip][:name] ).first
+      budget = trip.budgets.create( category: category, total: total )
+      puts "\nBudget successfully created for your #{trip.name} trip!\n" +
+           "Category: #{category.name}\nBudget: #{budget.total}"
     else
-      puts "\n" + "Failed to set budget. Please run `./trip cat` for a list of available categories."
+      puts "\nFailed to set budget. Please run `./trip cat` for a list" +
+           " of available categories."
     end
   end
 
