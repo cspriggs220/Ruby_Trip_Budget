@@ -9,6 +9,8 @@ The goal of this project is to create a command line budget app for a vacation, 
 ##Project Status
 [![Build Status](https://travis-ci.org/cspriggs220/Ruby_Trip_Budget.png)](https://travis-ci.org/cspriggs220/Ruby_Trip_Budget)
 
+[![Code Climate](https://codeclimate.com/github/cspriggs220/Ruby_Trip_Budget.png)](https://codeclimate.com/github/cspriggs220/Ruby_Trip_Budget)
+
 Completed basic implementation, including trip add/remove/list, budet setting, and expense add/list with remaining balance for said category. Project not complete.
 
 ##TODO
