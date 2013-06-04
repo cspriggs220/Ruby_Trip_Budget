@@ -14,14 +14,13 @@ The goal of this project is to create a command line budget app for a vacation, 
 Completed basic implementation, including trip add/remove/list, budet setting, and expense add/list with remaining balance for said category. Project not complete.
 
 ##TODO
-1. Update each category and subsequent budget after each expense added.
-2. Transform into a terminal "app" instead of needing to run the file path to perform an action.
 2. Add warning message when removing a trip, along with message that the trip was removed.
 3. Add ding for reaching n percentage of allotted budget.
 4. Add help functionality
 5. Add instructions on how to use the ./trip command to README.
 6. Implement routes instead of if command == in exe file.
 7. Add other errors for wrong/invalid arguments passed.
+1. Add colors and other makeup to provide better visualization.
 
 ##Features
 Features for this app include being able to add expenses, track the budget's progress, and receive notifications via the terminal when they reaching their allotted budget.
@@ -70,7 +69,6 @@ To list available commands:
 
 
 ##Known bugs
-Not updating db for each expense.
 Doesn't account for multiple expenses per category.
 Removing a trip doesn't wipe out all trip associations in the db.
 

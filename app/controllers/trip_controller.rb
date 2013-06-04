@@ -1,5 +1,5 @@
 class TripController
-
+  include Formatter
   attr_accessor :params
 
   def initialize params
@@ -16,18 +16,22 @@ class TripController
   end
 
   def index
-    if Trip.count == 0
+    if Trip.count < 1
       puts "There are no trips to list. Please run `./trip add <trip-name>`" +
            " to add a trip."
     else
-      string = "\nTrip List\n"
-      string += "-------------------------------------------"
+      string = "Trip List\n"
       trips = Trip.all
       trips.each_with_index { |trip, i|
        string += "\n#{i+1}. #{trip.name}\n"
       }
-      string += "-------------------------------------------"
-      puts string
+      string
+    end
+  end
+
+  def print_index
+    format_layout do
+      puts index
     end
   end
 
@@ -37,28 +41,33 @@ class TripController
     if category
       trip   = Trip.where( name: params[:trip][:name] ).first
       budget = trip.budgets.create( category: category, total: total )
-      puts "\nBudget successfully created for your #{trip.name} trip!\n" +
-           "Category: #{category.name}\nBudget: #{budget.total}"
+      "\nBudget successfully created for your #{trip.name} trip!\n" +
+      "Category: #{category.name}\nBudget: #{budget.total}"
     else
-      puts "\nFailed to set budget. Please run `./trip cat` for a list" +
-           " of available categories."
+      "\nFailed to set budget. Please run `./trip cat` for a list" +
+      " of available categories."
     end
+  end
+
+  def print_budget_message
+    puts set_category_budget
   end
 
   def get_balance
     trip = Trip.where( name: params[:trip][:name] ).first
     totals = 0
-    string = "\n-------------------------------------------"
+    string = ""
     trip.budgets.each do |b|
       totals += b.total
-      string += "\n" + b.category.name.ljust(15) + " - " + b.total.to_s
+      string += b.category.name.ljust(15) + " - $" + b.total.to_s + "\n"
     end
-    string += "\n-------------------------------------------"
     string += "\nTotal #{trip.name} Budget: $#{totals}"
   end
 
   def print_budget_balance
-    puts get_balance
+    format_layout do
+      puts get_balance
+    end
   end
 
   def destroy

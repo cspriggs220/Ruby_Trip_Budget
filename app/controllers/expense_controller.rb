@@ -1,4 +1,5 @@
 class ExpenseController
+  include Formatter
   attr_accessor :params
 
   def initialize params
@@ -12,10 +13,10 @@ class ExpenseController
     budget   = trip.budgets.where( category_id: category.id ).first
     if budget
       trip.expenses.create( amount: amount, budget: budget )
-      return "\nExpense created for #{trip.name}: #{category.name} $#{amount}"
+      "\nExpense created for #{trip.name}: #{category.name} $#{amount}"
     else
-      return "\nError: Run `./trip set #{trip.name} #{category.name}" +
-           " (amount)` to set a budget for this category in order to create an expense."
+      "\nError: Run `./trip set #{trip.name} #{category.name}" +
+      " (amount)` to set a budget for this category in order to create an expense."
     end
   end
 
@@ -25,7 +26,7 @@ class ExpenseController
 
   def index
     trip = Trip.where( name: params[:category][:name] ).first
-    string = "\n#{trip.name} Expense List\n"
+    string = "#{trip.name} Expense List\n"
     if trip.expenses.exists?
       trip.budgets.joins(:category).where("category_id is not null").each_with_index {
       |budget, i|
@@ -33,14 +34,16 @@ class ExpenseController
         string += "\n#{i+1}. #{budget.category.name} $#{total} || " +
                   "#{budget.category.name} Balance: $#{budget.total-total}\n"
       }
-      return string
+      string
     else
-      return "There are no expenses for the #{trip.name} trip."
+      "There are no expenses for the #{trip.name} trip."
     end
   end
 
   def print_expense_balance
-    puts index
+    format_layout do
+      puts index
+    end
   end
 
 end

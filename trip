@@ -25,14 +25,14 @@ controller = TripController.new(params)
 if command == "add"
   controller.create
 elsif command == "list"
-  controller.index
+  controller.print_index
 elsif command == "remove"
   controller.destroy
 elsif command == "cat"
   controller = CategoryController.new
   controller.index
 elsif command == "set"
-  controller.set_category_budget
+  controller.print_budget_message
 elsif command == "balance"
   controller.print_budget_balance
 elsif command == "expense"

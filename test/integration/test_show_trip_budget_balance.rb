@@ -7,7 +7,7 @@ class TestShowTripBudgetBalance < MiniTest::Unit::TestCase
     trip = Trip.create( name: 'Austin' )
     cat  = Category.create( name: 'Food' )
     Budget.create( trip_id: trip.id, category_id: cat.id, total: 100 )
-    expected = "\n-------------------------------------------\nFood            - 100\n-------------------------------------------\nTotal Austin Budget: $100\n"
+    expected = "\n-------------------------------------------\nFood            - $100\n\nTotal Austin Budget: $100\n-------------------------------------------\n"
     actual = `ruby trip balance Austin`
     assert_equal expected, actual
   end
@@ -20,7 +20,7 @@ class TestShowTripBudgetBalance < MiniTest::Unit::TestCase
     Budget.create( trip_id: trip.id, category_id: food.id, total: 100 )
     Budget.create( trip_id: trip.id, category_id: ent.id, total: 300 )
     Budget.create( trip_id: trip.id, category_id: lodging.id, total: 500 )
-    expected = "\n-------------------------------------------\nFood            - 100\nEntertainment   - 300\nLodging         - 500\n-------------------------------------------\nTotal Austin Budget: $900\n"
+    expected = "\n-------------------------------------------\nFood            - $100\nEntertainment   - $300\nLodging         - $500\n\nTotal Austin Budget: $900\n-------------------------------------------\n"
     actual = `ruby trip balance Austin`
     assert_equal expected, actual
   end
