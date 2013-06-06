@@ -8,7 +8,6 @@ The goal of this project is to create a command line budget app for a vacation, 
 
 ##Project Status
 [![Build Status](https://travis-ci.org/cspriggs220/Ruby_Trip_Budget.png)](https://travis-ci.org/cspriggs220/Ruby_Trip_Budget)
-
 [![Code Climate](https://codeclimate.com/github/cspriggs220/Ruby_Trip_Budget.png)](https://codeclimate.com/github/cspriggs220/Ruby_Trip_Budget)
 
 Completed basic implementation, including trip add/remove/list, budet setting, and expense add/list with remaining balance for said category. Project not complete.
@@ -69,8 +68,8 @@ To list available commands:
 
 
 ##Known bugs
-Doesn't account for multiple expenses per category.
-Removing a trip doesn't wipe out all trip associations in the db.
+1. Doesn't account for multiple expenses per category.
+2. Removing a trip doesn't wipe out all trip associations in the db.
 
 
 ##Author
@@ -88,3 +87,4 @@ None
 5. 2013/5/21 - Add setting a trip's expense category budget, as well as printing the balance of the budget for trip.
 5. 2013/5/24 - Add expenses table on database, and begin adding expense functionality.
 5. 2013/5/31 - Refactor expense controller.
+1. 2013/6/04 - Add Formatter module and refactor controllers
